@@ -1,5 +1,5 @@
-<p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
+
+![EDAEBFFA-8D62-41A7-9A47-3FE91953E10B](https://github.com/user-attachments/assets/cfaf0c60-5f44-4fd4-b1b3-ab9e6c1c9a3e)
 </p>
 
 <h1>VPN Setup and Configuration in Azure</h1>
