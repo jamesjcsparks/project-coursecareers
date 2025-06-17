@@ -16,11 +16,13 @@ This project is a tutorial and implementation guide for setting up a secure Virt
 
 <h2>List of Prerequisites</h2>
 
-- Item 1 - Windows VM with Internet Access (via Azure or local)
-- Item 2 - IIS (Internet Information Services) installed and configured
-- Item 3 - PHP 8.x installed 
-- Item 4 - MySQL Server installed and running
-- Item 5 - osTicket Installation Files (Download from https://osticket.com/download/)
+- Item 1 - Set Up Your Azure Account
+- Item 2 - Create a Resource Group
+- Item 3 - Create a Virtual Network (VNet)
+- Item 4 - Provision a Virtual Machine (VPN Server)
+- Item 5 - Configure Network Security Group (NSG)
+- Item 6 - Configure Network Security Group (NSG)
+- Item 7 - Enable Remote Access
 
 <h2>Installation Steps</h2>
 
