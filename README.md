@@ -21,7 +21,7 @@ This project is a tutorial and implementation guide for setting up a secure Virt
 - Item 3 - Create a Virtual Network (VNet)
 - Item 4 - Provision a Virtual Machine (VPN Server)
 - Item 5 - Configure Network Security Group (NSG)
-- Item 6 - Configure Network Security Group (NSG)
+- Item 6 - Prepare local machine
 - Item 7 - Enable Remote Access
 
 <h2>Installation Steps</h2>
