@@ -73,3 +73,38 @@ Configure Routing and Remote Access (RRAS) to allow VPN access.
 Set up user permissions and firewall rules.
 </p>
 <br />
+<h1>Demonstration section </h1>
+<p>
+
+This section illustrates how the configured VPN is used to establish a secure connection and access internal resources within the Azure environment.
+
+---
+
+### 1. VPN Connection from Windows 10 Client
+
+The VPN connection was successfully established from a Windows 10 client using built-in VPN settings.
+
+
+---
+
+### 2. Verifying Internal Network Access
+
+Once connected, we tested access to internal resources in the Azure Virtual Network by pinging the internal IP of the VPN server.
+
+``powershell
+ping 10.0.0.4
+``
+Successful ping to internal VM over the VPN tunnel
+
+ 3. Monitoring Traffic with Wireshark (Optional)
+Using Wireshark, we captured and analyzed the traffic between the VPN client and server. The screenshot below shows encrypted traffic using VPN protocols such as ESP and ISAKMP.
+
+
+Encrypted traffic (ESP/UDP 500) captured on Wireshark during VPN session
+
+ 4. Secure and Functional Connection
+This confirms that the VPN setup allows for:
+
+Encrypted communication
+Remote access to internal resources
+Successful client-server interaction through the VPN tunnel
