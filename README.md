@@ -108,3 +108,14 @@ This confirms that the VPN setup allows for:
 Encrypted communication
 Remote access to internal resources
 Successful client-server interaction through the VPN tunnel
+
+<h2>Lessons Learned</h2>
+<ul>
+  <li><p><strong>Understanding Azure Networking:</strong> Setting up the VPN helped deepen my knowledge of Azure Virtual Networks, subnets, and how Network Security Groups control traffic flow effectively.</p></li>
+  <li><p><strong>Importance of Proper NSG Configuration:</strong> Configuring the correct inbound and outbound rules for VPN protocols was critical to ensure secure and functional connectivity.</p></li>
+  <li><p><strong>Role of RRAS in Windows Server:</strong> Learning how to enable and configure Routing and Remote Access Service (RRAS) gave practical insight into managing Windows-based VPN servers.</p></li>
+  <li><p><strong>Troubleshooting Connectivity Issues:</strong> Encountering and resolving VPN connection errors improved my skills in diagnosing network issues using tools like PowerShell and Wireshark.</p></li>
+  <li><p><strong>Security Best Practices:</strong> The project reinforced the need for encrypted tunnels and strict access controls to protect sensitive internal resources when allowing remote access.</p></li>
+  <li><p><strong>Automation with PowerShell:</strong> Using PowerShell scripts to provision and configure Azure resources saved time and ensured repeatability in deployments.</p></li>
+</ul>
+
