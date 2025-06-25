@@ -24,98 +24,97 @@ This project is a tutorial and implementation guide for setting up a secure Virt
 - Item 6 - Prepare Local Machine
 - Item 7 - Enable Remote Access
 
+<h1>VPN Setup and Demonstration in Microsoft Azure</h1>
+
 <h2>Installation Steps</h2>
 
-Item 1: Set Up Your Azure Account
-Sign up or log into your Azure Portal.
-Set up a subscription with billing information.
-</p>
-
-
-![F04D4C78-6B96-442F-A37E-C9A239C107FB](https://github.com/user-attachments/assets/31bf8f45-6905-4498-a544-9dead10bce38)
-
-Item 2: Create a Resource Group
-Use the Azure Portal or PowerShell
-<p>
-Item 3: Create a Virtual Network (VNet)
-Define the IP address space and subnets.
-
-Item 4: Provision a Virtual Machine (VPN Server)
-Deploy a Windows Server 2022 VM in the VNet.
-Ensure RDP (port 3389) is open.
-Use a Standard SKU for compatibility with RRAS and networking features.
-![0EFCB00C-A9F4-45EA-892A-B6445C62EAFA](https://github.com/user-attachments/assets/b6b5dd54-2315-45f7-8598-877f11083326)
-
-</p>
-
-
-<p>
-Item 5: Configure Network Security Group (NSG)
-Add inbound rules to allow VPN protocols:
-UDP 500 (IKE)
-UDP 1701 (L2TP)
-UDP 4500 (IPSec NAT-T)
-TCP 1723 (PPTP)
-Protocol 50 (ESP — via CLI or PowerShell)
-</p>
-
-Item 6: Prepare Local Machine (Client)
-On your Windows 10 PC:
-Ensure VPN Client is enabled via Network & Sharing Center.
-Optional: install Wireshark for packet inspection.
-![14B7C8E6-EEF4-4EDA-BB1C-6B6D9450D1A3](https://github.com/user-attachments/assets/3262949b-181e-4b73-a068-4f8dfe789eca)
-
-</p>
-<p></p>
-Item 7: Enable Remote Access on the Server
-Install the Remote Access role.
-Configure Routing and Remote Access (RRAS) to allow VPN access.
-Set up user permissions and firewall rules.
-</p>
-<br />
-<h1>Demonstration section </h1>
-<p>
-
-This section illustrates how the configured VPN is used to establish a secure connection and access internal resources within the Azure environment.
-
----
-
-### 1. VPN Connection from Windows 10 Client
-
-The VPN connection was successfully established from a Windows 10 client using built-in VPN settings.
-
-
----
-
-### 2. Verifying Internal Network Access
-
-Once connected, we tested access to internal resources in the Azure Virtual Network by pinging the internal IP of the VPN server.
-
-``powershell
-ping 10.0.0.4
-``
-Successful ping to internal VM over the VPN tunnel
-
- 3. Monitoring Traffic with Wireshark (Optional)
-Using Wireshark, we captured and analyzed the traffic between the VPN client and server. The screenshot below shows encrypted traffic using VPN protocols such as ESP and ISAKMP.
-
-
-Encrypted traffic (ESP/UDP 500) captured on Wireshark during VPN session
-
- 4. Secure and Functional Connection
-This confirms that the VPN setup allows for:
-
-Encrypted communication
-Remote access to internal resources
-Successful client-server interaction through the VPN tunnel
-
-<h2>Lessons Learned</h2>
+<h3>Item 1: Set Up Your Azure Account</h3>
 <ul>
-  <li><p><strong>Understanding Azure Networking:</strong> Setting up the VPN helped deepen my knowledge of Azure Virtual Networks, subnets, and how Network Security Groups control traffic flow effectively.</p></li>
-  <li><p><strong>Importance of Proper NSG Configuration:</strong> Configuring the correct inbound and outbound rules for VPN protocols was critical to ensure secure and functional connectivity.</p></li>
-  <li><p><strong>Role of RRAS in Windows Server:</strong> Learning how to enable and configure Routing and Remote Access Service (RRAS) gave practical insight into managing Windows-based VPN servers.</p></li>
-  <li><p><strong>Troubleshooting Connectivity Issues:</strong> Encountering and resolving VPN connection errors improved my skills in diagnosing network issues using tools like PowerShell and Wireshark.</p></li>
-  <li><p><strong>Security Best Practices:</strong> The project reinforced the need for encrypted tunnels and strict access controls to protect sensitive internal resources when allowing remote access.</p></li>
-  <li><p><strong>Automation with PowerShell:</strong> Using PowerShell scripts to provision and configure Azure resources saved time and ensured repeatability in deployments.</p></li>
+  <li>Sign up or log into your Azure Portal</li>
+  <li>Set up a subscription with billing information</li>
+</ul>
+
+![97708ECC-7C2B-42B7-9AA0-15B72C91DBC4](https://github.com/user-attachments/assets/1719c632-1d73-48ed-b1c7-c37a0fd92fc0)
+
+<h3>Item 2: Create a Resource Group</h3>
+<ul>
+  <li>Use the Azure Portal or PowerShell</li>
+</ul>
+
+<h3>Item 3: Create a Virtual Network (VNet)</h3>
+<ul>
+  <li>Define the IP address space and subnets</li>
+</ul>
+
+<h3>Item 4: Provision a Virtual Machine (VPN Server)</h3>
+<ul>
+  <li>Deploy a Windows Server 2022 VM in the VNet</li>
+  <li>Ensure RDP (port 3389) is open</li>
+  <li>Use a Standard SKU for compatibility with RRAS and networking features</li>
+</ul>
+
+![478C71CD-E496-40AB-8755-7241E3DFF5F3](https://github.com/user-attachments/assets/3fe885c8-5bdb-4323-ae72-420f7c51dbf4)
+
+
+<h3>Item 5: Configure Network Security Group (NSG)</h3>
+<ul>
+  <li>Add inbound rules to allow VPN protocols:</li>
+  <ul>
+    <li>UDP 500 (IKE)</li>
+    <li>UDP 1701 (L2TP)</li>
+    <li>UDP 4500 (IPSec NAT-T)</li>
+    <li>TCP 1723 (PPTP)</li>
+    <li>Protocol 50 (ESP – via CLI or PowerShell)</li>
+  </ul>
+</ul>
+
+<h3>Item 6: Prepare Local Machine (Client)</h3>
+<ul>
+  <li>On your Windows 10 PC:</li>
+  <ul>
+    <li>Ensure VPN Client is enabled via Network & Sharing Center</li>
+    <li>Optional: install Wireshark for packet inspection</li>
+  </ul>
+</ul>
+
+![24ACB314-4933-45B6-9E28-BE2793C46874](https://github.com/user-attachments/assets/2a98afdf-c8fd-46fd-b87c-53f33c9bb09d)
+
+
+<h3>Item 7: Enable Remote Access on the Server</h3>
+<ul>
+  <li>Install the Remote Access role</li>
+  <li>Configure Routing and Remote Access (RRAS) to allow VPN access</li>
+  <li>Set up user permissions and firewall rules</li>
+</ul>
+
+![image](https://github.com/user-attachments/assets/b1c06f5e-1ab3-4ae1-902b-fa254acc0e89)
+
+<hr/>
+
+<h2>Demonstration Section</h2>
+
+<h3>1. VPN Connection from Windows 10 Client</h3>
+<p>
+The VPN connection was successfully established from a Windows 10 client using built-in VPN settings.
+</p>
+
+<h3>2. Verifying Internal Network Access</h3>
+<p>
+Once connected, we tested access to internal resources in the Azure Virtual Network by pinging the internal IP of the VPN server.
+</p>
+<pre><code>ping 10.0.0.4</code></pre>
+<p>Result: Successful ping to internal VM over the VPN tunnel</p>
+
+<h3>3. Monitoring Traffic with Wireshark (Optional)</h3>
+<p>
+Using Wireshark, we captured and analyzed the traffic between the VPN client and server.
+The screenshot showed encrypted traffic using VPN protocols such as ESP and ISAKMP.
+</p>
+
+<h3>4. Secure and Functional Connection</h3>
+<ul>
+  <li>Encrypted communication</li>
+  <li>Remote access to internal resources</li>
+  <li>Successful client-server interaction through the VPN tunnel</li>
 </ul>
 
